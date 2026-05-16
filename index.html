@@ -29,7 +29,6 @@ body {
 .container {
     width: 95%;
     max-width: 650px;
-    /* Opacidade reduzida para 0.65 para mostrar mais o fundo */
     background: rgba(255, 255, 255, 0.65);
     border-radius: 20px;
     padding: 30px;
@@ -38,7 +37,6 @@ body {
     position: relative;
     margin: 20px;
     box-sizing: border-box;
-    /* Efeito de desfoque suave para destacar o texto */
     backdrop-filter: blur(2px);
 }
 
@@ -121,7 +119,7 @@ textarea {
 <div id="creditos" class="container tela">
     <button class="voltar" onclick="voltarMenu()">⬅ Voltar</button>
     <h1 style="color:#5d4037">📜 Créditos</h1>
-    <div style="text-align: left; padding: 10px;">
+    <div style="text-align: left; padding: 20px;">
         <p><strong>O Segredo de Mani</strong></p>
         <p>Unindo folclore brasileiro e ciência.</p>
         <p><strong>Conteúdo:</strong> Gelatinização do Amido.</p>
@@ -137,121 +135,126 @@ textarea {
         <div class="story-box">
             <p>Há muito tempo, em uma aldeia indígena no coração do Brasil, nasceu uma menina muito especial chamada <strong>Mani</strong>. Ela tinha a pele branquinha como o luar e era muito amada por todos, pois trazia alegria e luz para a sua tribo.</p>
             <p>Mani faleceu ainda criança e foi enterrada dentro da própria oca. Com o tempo, uma planta desconhecida brotou naquele local. Ao cavarem a terra, encontraram uma raiz de casca escura e interior <strong>branquinho como a pele de Mani</strong>.</p>
-            <p>Chamaram a raiz de <strong>Mandioca</strong> ("Casa de Mani"). Eles aprenderam a extrair um pó fininho dela, mas notaram um mistério: <strong>por que esse pó, ao ser aquecido no fogo, se transformava em uma massa unida que chamamos de tapioca?</strong></p>
+            <p>Chamaram a raiz de <strong>Mandioca</strong> ("Casa de Mani"). Eles aprenderam a extrair um pó fininho dela, mas notaram um mistério: <strong>por que esse pó, ao ser aquecido no fogo, se transformava em uma masa unida que chamamos de tapioca?</strong></p>
             <p style="color:#8d6e63; font-weight:bold; text-align: center; border-top: 1px solid #ddd; padding-top: 10px; text-shadow: 1px 1px 2px rgba(255,255,255,0.8);">✨ Vamos descobrir o segredo científico da Mani? ✨</p>
         </div>
         <button class="start" onclick="proximaTela()">🌱 Começar Investigação</button>
     </div>
 
+    <!-- Pergunta 1 -->
     <div id="tela2" class="tela">
-        <h2>Pergunta 1 de 14</h2>
-        <p class="pergunta-texto">Por que a tapioca não apresenta coesão (não fica grudada) antes do aquecimento?</p>
-        <button onclick="responderMC(false, 1, 'Coesão antes do calor', 'Ar frio', 'Falta de gelatinização')">A) Porque o ar frio da despensa contrai os grânulos</button>
-        <button onclick="responderMC(true, 1, 'Coesão antes do calor', 'Falta de gelatinização', 'Falta de gelatinização')">B) Porque as partículas não sofreram gelatinização</button>
-        <button onclick="responderMC(false, 1, 'Coesão antes do calor', 'Gelo seco', 'Falta de gelatinização')">C) Porque a massa contém cristais de gelo invisíveis</button>
-    </div>
-
-    <div id="tela3" class="tela">
-        <h2>Pergunta 2 de 14</h2>
+        <h2>Pergunta 1 de 12</h2>
         <p class="pergunta-texto">A tapioca é formada principalmente por qual desses nutrientes?</p>
-        <button onclick="responderMC(false, 2, 'Composição', 'Proteínas', 'Amido')">A) Proteínas vegetais</button>
-        <button onclick="responderMC(true, 2, 'Composição', 'Amido', 'Amido')">B) Amido</button>
-        <button onclick="responderMC(false, 2, 'Composição', 'Lipídios', 'Amido')">C) Lipídios e gorduras</button>
+        <button onclick="responderMC(false, 1, 'Composição principal', 'Proteínas vegetais', 'Amido')">A) Proteínas vegetais</button>
+        <button onclick="responderMC(true, 1, 'Composição principal', 'Amido', 'Amido')">B) Amido</button>
+        <button onclick="responderMC(false, 1, 'Composição principal', 'Lipídios e gorduras', 'Amido')">C) Lipídios e gorduras</button>
     </div>
 
-    <div id="tela4" class="tela">
-        <h2>Pergunta 3 de 14</h2>
+    <!-- Pergunta 2 -->
+    <div id="tela3" class="tela">
+        <h2>Pergunta 2 de 12</h2>
         <p class="pergunta-texto">Cientificamente falando, o amido é um tipo de:</p>
-        <textarea id="resposta3" placeholder="Sua resposta..."></textarea>
-        <button class="start" onclick="responderAberta(3, 'O amido é um tipo de:')">Enviar Resposta</button>
+        <textarea id="resposta2" placeholder="Sua resposta..."></textarea>
+        <button class="start" onclick="responderAberta(2, 'O amido é um tipo de')">Enviar Resposta</button>
     </div>
 
+    <!-- Pergunta 3 -->
+    <div id="tela4" class="tela">
+        <h2>Pergunta 3 de 12</h2>
+        <p class="pergunta-texto">Qual combinação de fatores permite a transformação da goma em tapioca?</p>
+        <button onclick="responderMC(false, 3, 'Combinação de fatores', 'Apenas água e sal', 'Água e calor')">A) Apenas água e sal</button>
+        <button onclick="responderMC(true, 3, 'Combinação de fatores', 'Água e calor', 'Água e calor')">B) Água e calor</button>
+        <button onclick="responderMC(false, 3, 'Combinação de fatores', 'Luz solar e tempo', 'Água e calor')">C) Luz solar e tempo</button>
+    </div>
+
+    <!-- Pergunta 4 -->
     <div id="tela5" class="tela">
-        <h2>Pergunta 4 de 14</h2>
-        <p class="pergunta-texto">Qual combinação de fatores permite a transformação da tapioca?</p>
-        <button onclick="responderMC(false, 4, 'Fatores', 'Água e sal', 'Água e calor')">A) Apenas Água e Sal</button>
-        <button onclick="responderMC(true, 4, 'Fatores', 'Água e calor', 'Água e calor')">B) Água e Calor</button>
-        <button onclick="responderMC(false, 4, 'Fatores', 'Luz e tempo', 'Água e calor')">C) Luz solar e Tempo</button>
+        <h2>Pergunta 4 de 12</h2>
+        <p class="pergunta-texto">O que acontece com os grânulos de amido quando recebem energia térmica na presença de água?</p>
+        <textarea id="resposta4" placeholder="Sua resposta..."></textarea>
+        <button class="start" onclick="responderAberta(4, 'Grânulos com energia térmica e água')">Enviar Resposta</button>
     </div>
 
+    <!-- Pergunta 5 -->
     <div id="tela6" class="tela">
-        <h2>Pergunta 5 de 14</h2>
-        <p class="pergunta-texto">O que acontece com as partículas de amido quando recebem energia térmica?</p>
-        <textarea id="resposta5" placeholder="Descreva aqui..."></textarea>
-        <button class="start" onclick="responderAberta(5, 'Efeito térmico')">Enviar Resposta</button>
-    </div>
-
-    <div id="tela7" class="tela">
-        <h2>Pergunta 6 de 14</h2>
+        <h2>Pergunta 5 de 12</h2>
         <p class="pergunta-texto">O aumento da temperatura provoca nas moléculas da massa:</p>
-        <button onclick="responderMC(true, 6, 'Temperatura', 'Energia cinética', 'Energia cinética')">A) Aumento da energia cinética (movimento)</button>
-        <button onclick="responderMC(false, 6, 'Temperatura', 'Solidificação', 'Energia cinética')">B) Solidificação imediata por resfriamento</button>
-        <button onclick="responderMC(false, 6, 'Temperatura', 'Perda de peso', 'Energia cinética')">C) Perda total de massa atômica</button>
+        <button onclick="responderMC(true, 5, 'Efeito do aumento da temperatura', 'Aumento da energia cinética', 'Aumento da energia cinética')">A) Aumento da energia cinética (movimento)</button>
+        <button onclick="responderMC(false, 5, 'Efeito do aumento da temperatura', 'Solidificação imediata', 'Aumento da energia cinética')">B) Solidificação imediata por resfriamento</button>
+        <button onclick="responderMC(false, 5, 'Efeito do aumento da temperatura', 'Perda de massa atômica', 'Aumento da energia cinética')">C) Perda total de massa atômica</button>
     </div>
 
+    <!-- Pergunta 6 -->
+    <div id="tela7" class="tela">
+        <h2>Pergunta 6 de 12</h2>
+        <p class="pergunta-texto">Como se chama o processo de inchamento do amido com a água e calor?</p>
+        <button onclick="responderMC(false, 6, 'Processo de inchamento', 'Evaporação seletiva', 'Gelatinização')">A) Evaporação seletiva</button>
+        <button onclick="responderMC(true, 6, 'Processo de inchamento', 'Gelatinização', 'Gelatinização')">B) Gelatinização</button>
+        <button onclick="responderMC(false, 6, 'Processo de inchamento', 'Oxidação', 'Gelatinização')">C) Oxidação</button>
+    </div>
+
+    <!-- Pergunta 7 -->
     <div id="tela8" class="tela">
-        <h2>Pergunta 7 de 14</h2>
-        <p class="pergunta-texto">Como se chama o processo de "inchamento" do amido com água e calor?</p>
-        <button onclick="responderMC(false, 8, 'Processo', 'Evaporação', 'Gelatinização')">A) Evaporação Seletiva</button>
-        <button onclick="responderMC(true, 8, 'Processo', 'Gelatinização', 'Gelatinização')">B) Gelatinização</button>
-        <button onclick="responderMC(false, 8, 'Processo', 'Oxidação', 'Gelatinização')">C) Oxidoredução</button>
+        <h2>Pergunta 7 de 12</h2>
+        <p class="pergunta-texto">Por que a umidade (água) é necessária para que a massa da tapioca grude?</p>
+        <textarea id="resposta7" placeholder="Sua resposta..."></textarea>
+        <button class="start" onclick="responderAberta(7, 'Necessidade de umidade')">Enviar Resposta</button>
     </div>
 
+    <!-- Pergunta 8 -->
     <div id="tela9" class="tela">
-        <h2>Pergunta 8 de 14</h2>
-        <p class="pergunta-texto">Por que a umidade (água) é necessária para a massa "grudar"?</p>
-        <textarea id="resposta8" placeholder="Sua resposta..."></textarea>
-        <button class="start" onclick="responderAberta(8, 'Papel da água')">Enviar Resposta</button>
+        <h2>Pergunta 8 de 12</h2>
+        <p class="pergunta-texto">Na frigideira, as moléculas de amido se organizam em:</p>
+        <button onclick="responderMC(true, 8, 'Organização na frigideira', 'Rede viscoelástica contínua', 'Rede viscoelástica contínua')">A) Uma rede viscoelástica contínua</button>
+        <button onclick="responderMC(false, 8, 'Organização na frigideira', 'Pequenos cristais de açúcar', 'Rede viscoelástica contínua')">B) Pequenos cristais de açúcar</button>
+        <button onclick="responderMC(false, 8, 'Organização na frigideira', 'Esferas ocas', 'Rede viscoelástica contínua')">C) Esferas ocas cheias de ar</button>
     </div>
 
+    <!-- Pergunta 9 -->
     <div id="tela10" class="tela">
-        <h2>Pergunta 9 de 14</h2>
-        <p class="pergunta-texto">Na frigideira, as moléculas de amido se reorganizam em:</p>
-        <button onclick="responderMC(true, 9, 'Reorganização', 'Rede viscoelástica', 'Rede viscoelástica')">A) Uma rede viscoelástica contínua</button>
-        <button onclick="responderMC(false, 9, 'Reorganização', 'Cristais de açúcar', 'Rede viscoelástica')">B) Pequenos cristais de açúcar</button>
-        <button onclick="responderMC(false, 9, 'Reorganização', 'Esferas de ar', 'Rede viscoelástica')">C) Esferas ocas cheias de ar</button>
+        <h2>Pergunta 9 de 12</h2>
+        <p class="pergunta-texto">Explique com suas palavras como o calor modifica a estrutura do amido.</p>
+        <textarea id="resposta9" placeholder="Sua resposta..."></textarea>
+        <button class="start" onclick="responderAberta(9, 'Modificação pelo calor')">Enviar Resposta</button>
     </div>
 
+    <!-- Pergunta 10 -->
     <div id="tela11" class="tela">
-        <h2>Pergunta 10 de 14</h2>
-        <p class="pergunta-texto">Explique o que você entendeu sobre como o calor muda a estrutura do amido:</p>
-        <textarea id="resposta10" placeholder="Escreva sua explicação..."></textarea>
-        <button class="start" onclick="responderAberta(10, 'Mudança estrutural')">Enviar Resposta</button>
-    </div>
-
-    <div id="tela12" class="tela">
-        <h2>Pergunta 11 de 14</h2>
+        <h2>Pergunta 10 de 12</h2>
         <p class="pergunta-texto">O calor quebra as ligações de hidrogênio entre as cadeias de amido. Isso é:</p>
-        <button onclick="responderMC(true, 11, 'Ligações', 'Verdadeiro', 'Verdadeiro')">A) Verdadeiro</button>
-        <button onclick="responderMC(false, 11, 'Ligações', 'Falso', 'Verdadeiro')">B) Falso, o calor cria novas ligações de metal</button>
-        <button onclick="responderMC(false, 11, 'Ligações', 'Não ocorre nada', 'Verdadeiro')">C) Não ocorre nenhuma mudança nas ligações</button>
+        <button onclick="responderMC(true, 10, 'Quebra de ligações', 'Verdade', 'Verdade')">A) Verdade</button>
+        <button onclick="responderMC(false, 10, 'Quebra de ligações', 'Falso', 'Verdade')">B) Falso</button>
+        <button onclick="responderMC(false, 10, 'Quebra de ligações', 'Não ocorre nenhuma mudança', 'Verdade')">C) Não ocorre nenhuma mudança</button>
     </div>
 
+    <!-- Pergunta 11 -->
+    <div id="tela12" class="tela">
+        <h2>Pergunta 11 de 12</h2>
+        <p class="pergunta-texto">Qual a principal diferença entre a goma de mandioca (polvilho) e a tapioca pronta?</p>
+        <textarea id="resposta11" placeholder="Sua resposta..."></textarea>
+        <button class="start" onclick="responderAberta(11, 'Diferença goma e tapioca pronta')">Enviar Resposta</button>
+    </div>
+
+    <!-- Pergunta 12 -->
     <div id="tela13" class="tela">
-        <h2>Pergunta 12 de 14</h2>
-        <p class="pergunta-texto">Qual a principal diferença entre o pó da mandioca seco e a tapioca pronta?</p>
-        <textarea id="resposta12" placeholder="Sua resposta..."></textarea>
-        <button class="start" onclick="responderAberta(12, 'Diferença pó/pronta')">Enviar Resposta</button>
+        <h2>Pergunta 12 de 12</h2>
+        <p class="pergunta-texto">Depois que a tapioca esfria no prato, ela volta a ser pó solto?</p>
+        <button onclick="responderMC(false, 12, 'Esfriamento da tapioca', 'Sim, em 5 min', 'Não')">A) Sim, basta esperar 5 minutos</button>
+        <button onclick="responderMC(true, 12, 'Esfriamento da tapioca', 'Não', 'Não')">B) Não, a estrutura permanece unida</button>
+        <button onclick="responderMC(false, 12, 'Esfriamento da tapioca', 'Sim, sem calor', 'Não')">C) Sim, se retirarmos o calor completamente</button>
     </div>
 
+    <!-- Pergunta Reflexão -->
     <div id="tela14" class="tela">
-        <h2>Pergunta 13 de 14</h2>
-        <p class="pergunta-texto">Depois que a tapioca esfria no prato, ela volta a ser pó solto?</p>
-        <button onclick="responderMC(false, 13, 'Esfriamento', 'Sim', 'Não')">A) Sim, basta esperar 5 minutos</button>
-        <button onclick="responderMC(true, 13, 'Esfriamento', 'Não', 'Não')">B) Não, a estrutura permanece unida</button>
-        <button onclick="responderMC(false, 13, 'Esfriamento', 'Sim, se soprar', 'Não')">C) Sim, se sopramos o calor para longe</button>
+        <h2>Pergunta bônus / Reflexão</h2>
+        <p class="pergunta-texto">Como a lenda de Mani ajuda você a entender a importância cultural e histórica da mandioca?</p>
+        <textarea id="resposta13" placeholder="Sua reflexão..."></textarea>
+        <button class="start" onclick="responderAberta(13, 'Importância cultural da lenda')">Finalizar Jornada</button>
     </div>
 
     <div id="tela15" class="tela">
-        <h2>Pergunta 14 de 14</h2>
-        <p class="pergunta-texto">Como a lenda de Mani ajudou você a entender a importância dessa raiz?</p>
-        <textarea id="resposta14" placeholder="Sua reflexão final..."></textarea>
-        <button class="start" onclick="responderAberta(14, 'Reflexão final')">Finalizar Jornada</button>
-    </div>
-
-    <div id="tela16" class="tela">
         <h1 style="color:#5d4037">🎉 Missão Cumprida!</h1>
-        <p id="resultado" style="font-size: 22px; font-weight: bold; color: #8d6e63; text-shadow: 1px 1px 2px rgba(255,255,255,0.8);"></p>
+        <p style="font-size: 18px; color: #3e2723; margin-bottom: 25px; text-shadow: 1px 1px 2px rgba(255,255,255,0.8);">Parabéns! Você concluiu toda a investigação científica sobre o Segredo de Mani.</p>
         <button onclick="gerarPDF()">📄 Baixar Relatório</button>
         <button class="start" onclick="location.reload()">🏠 Início</button>
     </div>
@@ -259,7 +262,6 @@ textarea {
 
 <script>
 let telaAtual = 1;
-let pontuacao = 0;
 const respostasUsuario = [];
 const bodyElement = document.getElementById('game-body');
 
@@ -283,7 +285,7 @@ function voltarMenu() {
 }
 
 function mostrarTela(id) {
-    for (let i = 1; i <= 16; i++) {
+    for (let i = 1; i <= 15; i++) {
         let t = document.getElementById("tela" + i);
         if(t) t.classList.remove("ativa");
     }
@@ -292,23 +294,19 @@ function mostrarTela(id) {
 }
 
 function atualizarBarra() {
-    const percent = ((telaAtual - 1) / 15) * 100;
+    const percent = ((telaAtual - 1) / 14) * 100;
     document.getElementById("progresso").style.width = percent + "%";
 }
 
 function proximaTela() {
-    if (telaAtual < 16) {
+    if (telaAtual < 15) {
         telaAtual++;
         mostrarTela(telaAtual);
-        if(telaAtual === 16) {
-            document.getElementById("resultado").innerText = "Acertos: " + pontuacao + " de 8 objetivas";
-        }
     }
 }
 
 function responderMC(correta, num, pergunta, respUsu, corretaT) {
     respostasUsuario.push({ num, pergunta, resposta: respUsu, tipo: 'mc', acertou: correta });
-    if(correta) pontuacao++;
     proximaTela();
 }
 
